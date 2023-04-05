@@ -2,7 +2,9 @@
 import { set, get } from './actions';
 
 function StorageDataChange(key) {
-    window.addEventListener('storage',)
+    window.addEventListener('storage', (event) => {
+        
+    })
 }
 
 function needToString(data) {
@@ -15,7 +17,7 @@ function init({
 }) {
     const initData = get(key);
     if (initData) {
-        const data=needToString(data) ? JSON.stringify(initData) : initData;
+        const data = needToString(data) ? JSON.stringify(initData) : initData;
         StorageDataChange(data);
         onStorageDataChange(data);
     } else {
